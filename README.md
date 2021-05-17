@@ -10,6 +10,8 @@ You and your canine companion will never bark at the wrong tree again!s
 
 <br>
 
+![](https://img.shields.io/badge/-Git-informational?style=flat&logo=git&logoColor=white&color=darkgreen)
+![](https://img.shields.io/badge/-GitHub-informational?style=flat&logo=github&logoColor=white&color=darkgreen)
 ![](https://img.shields.io/badge/-VS_Code-informational?style=flat&logo=microsoft&logoColor=white&color=darkgreen)
 ![](https://img.shields.io/badge/-JavaScript-informational?style=flat&logo=javascript&logoColor=white&color=darkgreen)
 ![](https://img.shields.io/badge/-Postman-informational?style=flat&logo=postman&logoColor=white&color=darkgreen)
