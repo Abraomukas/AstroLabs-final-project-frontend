@@ -3,26 +3,7 @@ import React from 'react';
 import './../App.css';
 
 import Card from './../components/Card';
-import Footer from './../components/Footer';
 import Header from './../components/Header';
-import NavBar from './../components/NavBar';
-
-let headerLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' }
-];
-
-let footerLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' },
-  { label: 'Contact', path: '/contact' },
-  { label: 'FAQs', path: '/faqs' },
-  { label: 'T&C', path: '/terms-and-conditions' }
-];
-
-
-const personnel = ['Our doggos', 'Our humans'];
 
 const carouselStyleOne = {
   "width": "100%",
@@ -51,9 +32,6 @@ const carouselStyleThree = {
 function MainScreen() {
   return (
     <div className="App">
-
-      {/* ### NavBar ### */}
-      <NavBar logo="./images/logo.png" headerSites={headerLinks} dropdown={personnel}></NavBar>
 
       {/* ### Header ### */}
       <Header />
@@ -108,9 +86,6 @@ function MainScreen() {
 
         </div>
       </div>
-
-      {/* ### Footer ### */}
-      <Footer label="Footer" />
     </div>
   );
 }
