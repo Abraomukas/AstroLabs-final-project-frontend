@@ -8,18 +8,17 @@ import Header from './../components/Header';
 import NavBar from './../components/NavBar';
 
 let headerLinks = [
-  'Home',
-  'About',
-  'Contact'
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' }
 ];
 
 let footerLinks = [
-  'Home',
-  'About',
-  'Contact',
-  'FAQs',
-  'Subscribe',
-  'T&C'
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Contact', path: '/contact' },
+  { label: 'FAQs', path: '/faqs' },
+  { label: 'T&C', path: '/terms-and-conditions' }
 ];
 
 
@@ -54,7 +53,7 @@ function MainScreen() {
     <div className="App">
 
       {/* ### NavBar ### */}
-      <NavBar logo="./images/logo.png" headerSites={headerLinks} personnel={personnel}></NavBar>
+      <NavBar logo="./images/logo.png" headerSites={headerLinks} dropdown={personnel}></NavBar>
 
       {/* ### Header ### */}
       <Header />

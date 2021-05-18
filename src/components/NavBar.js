@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function NavBar(props) {
     return (
@@ -18,9 +19,9 @@ function NavBar(props) {
                     <ul className="navbar-nav">
                         {
                             props.headerSites.map(
-                                (site, index) => {
+                                (linkObj, index) => {
                                     return <li key={index} className="nav-item">
-                                        <a className="nav-link active" href="#">{site}</a>
+                                        <Link className="nav-link active" to={linkObj.path}>{linkObj.label}</Link>
                                     </li>
                                 }
                             )
@@ -32,9 +33,9 @@ function NavBar(props) {
                         </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {
-                                    props.personnel.map(
+                                    props.dropdown.map(
                                         (page, index) => {
-                                            return <li key={index}><a className="dropdown-item" href="#">{page}</a></li>
+                                            return <li key={index}><Link className="dropdown-item" to="#">{page}</Link></li>
                                         }
                                     )
                                 }
