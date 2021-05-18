@@ -1,11 +1,11 @@
 import React from 'react';
 
-function AboutScreen() {
+function ContactScreen() {
     return (
         <div style={{minHeight: "calc(100vh - 112px"}}>
-            <h1>About Us</h1>
+            <h1>Contact</h1>
         </div>
     );
 }
 
-export default AboutScreen;
+export default ContactScreen;

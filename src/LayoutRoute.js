@@ -6,7 +6,6 @@ import Footer from './components/Footer';
 
 
 let headerLinks = [
-    { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' }
 ];
@@ -14,7 +13,6 @@ let headerLinks = [
 const personnel = ['Our doggos', 'Our humans'];
 
 let footerLinks = [
-    { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
     { label: 'Contact', path: '/contact' },
     { label: 'FAQs', path: '/faqs' },
@@ -26,7 +24,7 @@ function LayoutRoute(props) {
         <div>
             <NavBar logo="./images/logo.png" headerSites={headerLinks} dropdown={personnel} />
             <Route path={props.path} exact={props.exact} component={props.component} />
-            <Footer label="Footer" />
+            <Footer label="Footer" footerSites={footerLinks} />
         </div>
     );
 }

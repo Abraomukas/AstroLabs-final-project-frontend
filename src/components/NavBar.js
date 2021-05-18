@@ -3,18 +3,12 @@ import {Link} from 'react-router-dom';
 
 function NavBar(props) {
     return (
-
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">
+                <Link className="navbar-brand" to="/">
                     <img src="./images/logo.png" width="36" />
-                </a>
-                <a className="navbar-brand" href="#">Tinder for doggos</a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                </Link>
+                <Link className="navbar-brand" to="/">Tinder for doggos</Link>
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         {
@@ -29,13 +23,14 @@ function NavBar(props) {
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Personnel
+                                Our services
                         </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {
                                     props.dropdown.map(
                                         (page, index) => {
-                                            return <li key={index}><Link className="dropdown-item" to="#">{page}</Link></li>
+                                            //TODO include the new pages
+                                            return <li key={index}><Link className="dropdown-item" to="/">{page}</Link></li>
                                         }
                                     )
                                 }
@@ -43,10 +38,6 @@ function NavBar(props) {
                         </li>
                     </ul>
                 </div>
-
-
-
-
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <form className="d-flex">
@@ -59,8 +50,6 @@ function NavBar(props) {
                 <button className="btn btn-outline-success" type="submit">Login</button>
             </div>
         </nav>
-
-
     );
 }
 
