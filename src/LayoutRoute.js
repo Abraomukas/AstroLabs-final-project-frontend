@@ -6,8 +6,8 @@ import Footer from './components/Footer';
 
 
 let headerLinks = [
-    { label: 'About', path: '/about' },
-    { label: 'Contact', path: '/contact' }
+    { label: 'Benefits', path: '/' },
+    { label: 'Success stories', path: '/' }
 ];
 
 const personnel = ['Our doggos', 'Our humans'];

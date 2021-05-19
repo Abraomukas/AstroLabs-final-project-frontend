@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function NavBar(props) {
     return (
@@ -21,10 +21,10 @@ function NavBar(props) {
                             )
                         }
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            <Link className="nav-link dropdown-toggle" to="" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
                                 Our services
-                        </a>
+                            </Link>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {
                                     props.dropdown.map(
@@ -47,7 +47,7 @@ function NavBar(props) {
 
                 </div>
 
-                <button className="btn btn-outline-success" type="submit">Login</button>
+                <Link className="btn btn-outline-success" to="/register-human" role="button">Sign up</Link>
             </div>
         </nav>
     );
