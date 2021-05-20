@@ -10,6 +10,7 @@ function HumansRegistrationScreen() {
     // initial - sending - successful - unsuccessful - validation error
     const [state, setState] = useState("initial");
 
+    // declare undefined variables
     let avatarField;
     let nameField;
     let surnameField;
@@ -19,6 +20,9 @@ function HumansRegistrationScreen() {
     let addressField;
     let likesField;
     let hatesField;
+
+    // instantiate a FormData object
+    const formData = new FormData();
 
 
     const register = () => {
@@ -52,16 +56,30 @@ function HumansRegistrationScreen() {
         else {
             setState("sending");
 
-            fetch("http://localhost:3001/humans/find")
+            formData.append('name', nameField.value);
+            formData.append('surname', surnameField.value);
+            formData.append('email', emailField.value);
+            formData.append('password', passwordField.value);
+            formData.append('contact', contactField.value);
+            formData.append('address', addressField.value);
+
+            fetch("http://localhost:3001/humans/add", {
+                method: 'POST',
+                headers: { "Content-Type": "application/json" },
+                body: formData
+            })
                 // if the submission is successful >>> successful
                 .then((backendResponse) => { backendResponse.json(); })
-                .then((theJson) => { console.log(theJson); })
+                .then((theJson) => {
+                    console.log(theJson);
+                    setState("successful");
+                })
                 // if the submission is not successful >>> unsuccessful
-                .catch((error) => { console.log(error); });
+                .catch((error) => {
+                    console.log(error);
+                    setState("unsuccessful");
+                });
         }
-
-
-
     }
 
     return (
@@ -73,49 +91,49 @@ function HumansRegistrationScreen() {
 
                 {/* ### Avatar ### */}
                 <div className="mb-3">
-                    <label for="avatar" className="form-label">Avatar</label>
+                    <label htmlFor="avatar" className="form-label">Avatar</label>
                     <input ref={(elem) => { avatarField = elem }} type="input" className="form-control" id="avatar" aria-describedby="avatarHelp" />
                     <div id="avatarHelp" className="form-text">Pic something cool you identify yourself with</div>
                 </div>
 
                 {/* ### Name ### */}
                 <div className="mb-3">
-                    <label for="name" className="form-label">Name</label>
+                    <label htmlFor="name" className="form-label">Name</label>
                     <input ref={(elem) => { nameField = elem }} type="text" className="form-control" id="name" aria-describedby="nameHelp" />
                     <div id="nameHelp" className="form-text">How do you parents call you?</div>
                 </div>
 
                 {/* ### Surname ### */}
                 <div className="mb-3">
-                    <label for="surname" className="form-label">Surname</label>
+                    <label htmlFor="surname" className="form-label">Surname</label>
                     <input ref={(elem) => { surnameField = elem }} type="text" className="form-control" id="surname" aria-describedby="surnameHelp" />
                     <div id="surnameHelp" className="form-text">What about family names?</div>
                 </div>
 
                 {/* ### Email ### */}
                 <div className="mb-3">
-                    <label for="email" className="form-label">Email address</label>
+                    <label htmlFor="email" className="form-label">Email address</label>
                     <input ref={(elem) => { emailField = elem }} type="email" className="form-control" id="email" aria-describedby="emailHelp" />
                     <div id="emailHelp" className="form-text">Spam? No thank you!</div>
                 </div>
 
                 {/* ### Password ### */}
                 <div className="mb-3">
-                    <label for="password" className="form-label">Password</label>
+                    <label htmlFor="password" className="form-label">Password</label>
                     <input ref={(elem) => { passwordField = elem }} type="password" className="form-control" id="password" aria-describedby="passwordHelp" />
                     <div id="passwordHelp" className="form-text">Please do NOT use "password123"</div>
                 </div>
 
                 {/* ### Contact nuber ### */}
                 <div className="mb-3">
-                    <label for="contact" className="form-label">Contact number</label>
+                    <label htmlFor="contact" className="form-label">Contact number</label>
                     <input ref={(elem) => { contactField = elem }} type="contact" className="form-control" id="contact" aria-describedby="contactHelp" />
                     <div id="contactHelp" className="form-text">Remember phone calls?</div>
                 </div>
 
                 {/* ### Address ### */}
                 <div className="mb-3">
-                    <label for="address" className="form-label">Address</label>
+                    <label htmlFor="address" className="form-label">Address</label>
                     <input ref={(elem) => { addressField = elem }} type="contact" className="form-control" id="address" aria-describedby="addressHelp" />
                     <div id="addressHelp" className="form-text">Where do we send our appreciation tokens?</div>
                 </div>
