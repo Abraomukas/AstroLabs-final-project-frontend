@@ -6,7 +6,7 @@ function NavBar(props) {
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
-                    <img src="./images/logo.png" width="36" />
+                    <img src="./images/logo.png" width="36" alt="App logo"/>
                 </Link>
                 <Link className="navbar-brand" to="/">Tinder for doggos</Link>
                 <div className="collapse navbar-collapse" id="navbarNav">

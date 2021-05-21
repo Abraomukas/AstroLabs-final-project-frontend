@@ -12,6 +12,7 @@ function Card(props) {
             <div className="card m-auto" style={cardStyle}>
                 <img src={`${props.imageUrl}`} className="card-img-top" alt={props.caption} />
                 <div className="card-body text-white bg-success">
+                    {/*TODO use Link instead*/}
                     <a href="#" className="btn btn-success"><b>{props.caption}</b></a>
                 </div>
             </div>
