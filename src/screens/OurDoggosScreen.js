@@ -3,7 +3,7 @@ import DoggoCard from "../components/DoggoCard";
 
 const loreIpsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu lorem dictum, vestibulum orci ut, hendrerit velit.";
 
-function OurDoggos(props) {
+function OurDoggosScreen(props) {
   return (
 
     <div className="album py-5 bg-light">
@@ -55,4 +55,4 @@ function OurDoggos(props) {
   );
 }
 
-export default OurDoggos;
+export default OurDoggosScreen;

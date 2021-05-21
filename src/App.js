@@ -5,7 +5,8 @@ import LayoutRoute from "./LayoutRoute";
 import MainScreen from "./screens/MainScreen";
 import AboutScreen from "./screens/AboutScreen";
 import ContactScreen from "./screens/ContactScreen";
-import OurDoggos from "./screens/OurDoggosScreen";
+import OurDoggosScreen from "./screens/OurDoggosScreen";
+import OurHumansScreen from "./screens/OurHumansScreen";
 import HumansRegistrationScreen from "./screens/HumansRegistrationScreen";
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
         <LayoutRoute path="/" exact={true} component={MainScreen} />
         <LayoutRoute path="/about" exact={true} component={AboutScreen} />
         <LayoutRoute path="/contact" exact={true} component={ContactScreen} />
-        <LayoutRoute path="/our-doggos" exact={true} component={OurDoggos} />
+        <LayoutRoute path="/our-doggos" exact={true} component={OurDoggosScreen} />
+        <LayoutRoute path="/our-humans" exact={true} component={OurHumansScreen} />
         <LayoutRoute path="/register-human" exact={true} component={HumansRegistrationScreen}
         />
       </Switch>
