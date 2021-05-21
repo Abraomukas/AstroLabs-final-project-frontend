@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NavBar(props) {
   
-    return ((
+    return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
@@ -29,9 +29,9 @@ function NavBar(props) {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 {
                                     props.dropdown.map(
-                                        (page, index) => {
+                                        (linkObj, index) => {
                                             //TODO include the new pages
-                                            return <li key={index}><Link className="dropdown-item" to="/">{page}</Link></li>
+                                            return <li key={index}><Link className="dropdown-item" to={linkObj.path}>{linkObj.label}</Link></li>
                                         }
                                     )
                                 }
