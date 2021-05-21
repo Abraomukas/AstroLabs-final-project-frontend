@@ -96,7 +96,7 @@ function HumansRegistrationScreen() {
             formData.append('contact', contactField.value);
             formData.append('address', addressField.value);
 
-            fetch("http://localhost:3001/humans/add", {
+            fetch(`${process.env.REACT_APP_API_ENDPOINT}/humans/add`, {
                 method: 'POST',
                 //headers: { "Content-Type": "application/json" },
                 body: formData
