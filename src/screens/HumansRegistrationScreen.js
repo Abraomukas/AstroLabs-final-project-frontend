@@ -89,6 +89,7 @@ function HumansRegistrationScreen() {
             setState("sending");
             setErrorsState([]);
 
+            formData.append('avatar', avatarField.value);
             formData.append('name', nameField.value);
             formData.append('surname', surnameField.value);
             formData.append('email', emailField.value);
